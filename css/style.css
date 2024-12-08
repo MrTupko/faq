@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/*
+*RESET
+*
+*/
+
+*, *::after, *::before {
+    box-sizing: border-box;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+
+body {
+    min-height: 100vh;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+p {
+    max-width: 50ch;
+   
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+    
+}
+
+/******************************************************************/
+
+/*
+*VARS
+*
+*/
+
+:root {
+
+--White: hsl(0, 0%, 100%);
+--Light-pink: hsl(275, 100%, 97%);
+--Grayish-purple: hsl(292, 16%, 49%);
+--Dark-purple: hsl(292, 42%, 14%);
+
+
+}
+
+/******************************************************************/
+
+/*
+*HELPERS
+*
+*/
+
+.margin-center {
+    margin-inline: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.sub-title:is(.flex) {
+    gap: 1rem;
+}
+
+.info-box > .flex {
+    justify-content: space-between;
+}
+
+/******************************************************************/
+
+/*
+*LAYOUT
+*
+*/
+
+.box-faq {
+    max-width: clamp(300px, 85%, 520px);
+    margin-top: 8rem;
+}
+
+.info {
+    margin: 1rem 0;
+}
+
+/******************************************************************/
+
+/*
+*FONTS
+*
+*/
+
+
+.work-sans {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.work-sans-bold {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+.work-sans-bolder {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sub-title {
+    font-size: 3em;
+}
+
+.info {
+    font-size: calc(1em * 0.95);
+}
+
+/******************************************************************/
+
+
+/*
+*STYLE
+*
+*/
+
+.box {
+    background-image: url("/assets/images/background-pattern-mobile.svg");
+    background-repeat: repeat-x;
+   
+    background-color: var(--Light-pink);
+}
+
+.box-faq {
+    padding: 1.5rem;
+    background-color: var(--White);
+    color: var(--Dark-purple);
+    border-radius: 0.5em;
+    box-shadow: 0 0 50px #33333349;
+}
+
+.sub-title {
+    margin-bottom: 2rem;
+}
+
+.box-faq > .info-box + .info-box {
+    border-top: 1px solid #33333318;
+}
+
+.info-box {
+    padding: 1rem 0;
+}
+
+.question {
+    cursor: pointer;
+}
+
+.info {
+    display: none;
+    color: var(--Grayish-purple);
+}
+
+.info-grow {
+    display: block;
+    height: auto;
+}
+
+.info-box:is(:hover, :focus) :is(.question) {
+    color: #AD28EB;
+}
+
+/******************************************************************/
+
+@media screen and (min-width: 700px) {
+    .box {
+        background-image: url("/assets/images/background-pattern-desktop.svg");
+    }
+    .box-faq {
+        margin-top: 13rem;
+        padding: 2.5rem;
+    }
+}
